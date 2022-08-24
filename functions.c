@@ -81,7 +81,6 @@ void putContInStructs(char *txtFile, sContacts *arrOfStr)
         int cntOfRows = 0;
         int cntOfCols = 0;
         int cnt = 0;
-        int isFgNull = 0;
         while (fg != NULL)
         {
             int stLen = strlen(buffer);
@@ -114,10 +113,6 @@ void putContInStructs(char *txtFile, sContacts *arrOfStr)
             cntOfRows++;
             memset(buffer, 0, strlen(buffer));
             fg = fgets(buffer, 512, fp);
-            if (fg == NULL)
-            {
-                isFgNull = 1;
-            }
         }
         arrOfStr[cntOfRows].name = NULL;
     }
